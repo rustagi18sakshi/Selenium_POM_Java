@@ -16,7 +16,6 @@
 	    <groupId>org.testng</groupId>
 	    <artifactId>testng</artifactId>
 	    <version>7.3.0</version>
-	    <scope>test</scope>
 	</dependency>
 	
 	<!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
@@ -41,7 +40,7 @@
 	</dependency>
   	
   </dependencies>
-  
+
   <!-- Maven surefire plugin for running tests through command line and jenkins -->
   <!-- Command to be used : mvn clean test/mvn clean test -Dfilename=testng5.xml -->
   <build>
@@ -51,16 +50,15 @@
 	        <artifactId>maven-surefire-plugin</artifactId>
 	        <version>3.0.0-M5</version>
 	        <configuration>
-    <!-- 	  <suiteXmlFiles>
+ 	    	<suiteXmlFiles>
 	            <suiteXmlFile>${filename}</suiteXmlFile>
-	          </suiteXmlFiles> -->
-	          <includes>
+	        </suiteXmlFiles>
+	  <!--  <includes>
 	          		<include>BaseWeb.java</include>
-	          </includes>
+	        </includes> -->
 	        </configuration>
 	      </plugin>
 		</plugins>
   </build>
-
 
 </project>

@@ -19,16 +19,17 @@ public class ContactsPage extends TestBase{
 		PageFactory.initElements(driver, this);
 	}
 	
+	// Actions
 	public boolean verifyContactsLabel()
 	{
 		return contactsLabel.isDisplayed();
 	}
 	
-	// Actions
 	// Here we are directly calling driver.findElement because
 	// it doesn't make sense to create separate xpath for each selection of contact.
 	public void selectContactsByName(String name)
 	{
 		driver.findElement(By.xpath("//a[text()='"+name+"']//parent::td//preceding-sibling::td//input[@name='contact_id']")).click();
 	}
+	
 }

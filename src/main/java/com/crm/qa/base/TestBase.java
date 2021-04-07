@@ -9,13 +9,20 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.events.EventFiringWebDriver;
 
 import com.crm.qa.util.TestUtil;
+import com.crm.qa.util.WebEventListener;
+import com.qa.ExtentReportListener.ExtentReportsFile;
 
-public class TestBase {
+public class TestBase extends ExtentReportsFile {
 
 	public static WebDriver driver; 
 	public static Properties prop;
+	
+	// Initialize variables for EventFiringWebDriver and WebEventListener class
+	public static EventFiringWebDriver e_driver;
+	public static WebEventListener eventListener;
 	
 	// Default constructor to load properties(environment variables)
 	public TestBase()
@@ -49,6 +56,14 @@ public class TestBase {
 			driver = new FirefoxDriver();
 		}
 
+		//*** Steps for using WebDriverEventListener ***
+		e_driver = new EventFiringWebDriver(driver);
+		// Now create object of EventListerHandler to register it with EventFiringWebDriver
+		eventListener = new WebEventListener();
+		e_driver.register(eventListener);
+		driver = e_driver;
+		//*** ------------ ***
+		
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
 		// PAGE_LOAD_TIMEOUT and IMPLICIT_WAIT values are coming directly from TestUtils.java class 
