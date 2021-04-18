@@ -45,4 +45,5 @@ public class NewContactPage extends TestBase{
 		company.sendKeys(comp);
 		saveBtn.click();
 	}
+	
 }

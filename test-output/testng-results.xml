@@ -1,57 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="3" passed="3">
+<testng-results skipped="0" failed="1" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="48344" started-at="2021-04-06T20:14:13Z" finished-at="2021-04-06T20:15:01Z">
+  <suite name="Default suite" duration-ms="473" started-at="2021-04-13T20:42:55Z" finished-at="2021-04-13T20:42:55Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="48344" started-at="2021-04-06T20:14:13Z" finished-at="2021-04-06T20:15:01Z">
-      <class name="com.crm.qa.tests.HomePageTest">
-        <test-method status="PASS" signature="reportSetup()[pri:0, instance:com.crm.qa.tests.HomePageTest@531be3c5]" name="reportSetup" is-config="true" duration-ms="154" started-at="2021-04-07T01:44:13Z" finished-at="2021-04-07T01:44:13Z">
+    <test name="Default test" duration-ms="473" started-at="2021-04-13T20:42:55Z" finished-at="2021-04-13T20:42:55Z">
+      <class name="com.crm.qa.tests.NewContactPageTest">
+        <test-method status="PASS" signature="reportSetup()[pri:0, instance:com.crm.qa.tests.NewContactPageTest@735b478]" name="reportSetup" is-config="true" duration-ms="158" started-at="2021-04-14T02:12:55Z" finished-at="2021-04-14T02:12:55Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- reportSetup -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.crm.qa.tests.HomePageTest@531be3c5]" name="setUp" is-config="true" duration-ms="14694" started-at="2021-04-07T01:44:13Z" finished-at="2021-04-07T01:44:27Z">
+        <test-method status="FAIL" signature="validateCreateMultipleNewContractTestLimitedValues([Ljava.lang.String;)[pri:1, instance:com.crm.qa.tests.NewContactPageTest@735b478]" name="validateCreateMultipleNewContractTestLimitedValues" duration-ms="463" started-at="2021-04-14T02:12:55Z" data-provider="getCRMContactsData" finished-at="2021-04-14T02:12:55Z">
+          <exception class="org.testng.TestNGException">
+            <message>
+              <![CDATA[
+The data provider is trying to pass 4 parameters but the method com.crm.qa.tests.NewContactPageTest#validateCreateMultipleNewContractTestLimitedValues takes 1]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.testng.TestNGException: 
+The data provider is trying to pass 4 parameters but the method com.crm.qa.tests.NewContactPageTest#validateCreateMultipleNewContractTestLimitedValues takes 1
+	at org.testng.internal.Invoker.injectParameters(Invoker.java:1231)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:113)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:206)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:177)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.testng.TestNGException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="verifyHomePageTitleTest()[pri:1, instance:com.crm.qa.tests.HomePageTest@531be3c5]" name="verifyHomePageTitleTest" duration-ms="16" started-at="2021-04-07T01:44:27Z" finished-at="2021-04-07T01:44:27Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyHomePageTitleTest -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.crm.qa.tests.HomePageTest@531be3c5]" name="tearDown" is-config="true" duration-ms="681" started-at="2021-04-07T01:44:27Z" finished-at="2021-04-07T01:44:28Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.crm.qa.tests.HomePageTest@531be3c5]" name="setUp" is-config="true" duration-ms="15988" started-at="2021-04-07T01:44:28Z" finished-at="2021-04-07T01:44:44Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="verifyCorrectUserNameLabelTest()[pri:2, instance:com.crm.qa.tests.HomePageTest@531be3c5]" name="verifyCorrectUserNameLabelTest" duration-ms="102" started-at="2021-04-07T01:44:44Z" finished-at="2021-04-07T01:44:44Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyCorrectUserNameLabelTest -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.crm.qa.tests.HomePageTest@531be3c5]" name="tearDown" is-config="true" duration-ms="700" started-at="2021-04-07T01:44:44Z" finished-at="2021-04-07T01:44:45Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.crm.qa.tests.HomePageTest@531be3c5]" name="setUp" is-config="true" duration-ms="13869" started-at="2021-04-07T01:44:45Z" finished-at="2021-04-07T01:44:59Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="verifyContactsLinkTest()[pri:3, instance:com.crm.qa.tests.HomePageTest@531be3c5]" name="verifyContactsLinkTest" duration-ms="1602" started-at="2021-04-07T01:44:59Z" finished-at="2021-04-07T01:45:00Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyContactsLinkTest -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.crm.qa.tests.HomePageTest@531be3c5]" name="tearDown" is-config="true" duration-ms="685" started-at="2021-04-07T01:45:00Z" finished-at="2021-04-07T01:45:01Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="reportTeardown()[pri:0, instance:com.crm.qa.tests.HomePageTest@531be3c5]" name="reportTeardown" is-config="true" duration-ms="217" started-at="2021-04-07T01:45:01Z" finished-at="2021-04-07T01:45:01Z">
+        </test-method> <!-- validateCreateMultipleNewContractTestLimitedValues -->
+        <test-method status="PASS" signature="reportTeardown()[pri:0, instance:com.crm.qa.tests.NewContactPageTest@735b478]" name="reportTeardown" is-config="true" duration-ms="1" started-at="2021-04-14T02:12:55Z" finished-at="2021-04-14T02:12:55Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- reportTeardown -->
-      </class> <!-- com.crm.qa.tests.HomePageTest -->
+      </class> <!-- com.crm.qa.tests.NewContactPageTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

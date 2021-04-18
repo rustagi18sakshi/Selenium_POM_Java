@@ -26,7 +26,8 @@ public class WebEventListener extends TestBase implements WebDriverEventListener
 		
 		try 
 		{
-			TestUtil.takeScreenshotAtEndOfTest();
+			// Able to use without creating TestUtil object, since this method is declared static.
+			TestUtil.takeScreenshotAtEndOfTest(); 
 		} 
 		catch (IOException e) 
 		{
@@ -39,7 +40,7 @@ public class WebEventListener extends TestBase implements WebDriverEventListener
 		System.out.println("Going to accept alert");	
 	}
 
-	public void afterAlertAccept(WebDriver arg0) 
+	public void afterAlertAccept(WebDriver driver) 
 	{
 		System.out.println("Accepted alert");	
 	}
@@ -49,7 +50,7 @@ public class WebEventListener extends TestBase implements WebDriverEventListener
 		System.out.println("Going to dismiss alert");	
 	}
 
-	public void afterAlertDismiss(WebDriver arg0) 
+	public void afterAlertDismiss(WebDriver driver) 
 	{
 		System.out.println("Dismissed alert");	
 	}
@@ -129,7 +130,7 @@ public class WebEventListener extends TestBase implements WebDriverEventListener
 		
 	}
 
-	public void afterSwitchToWindow(String arg0, WebDriver arg1) {
+	public void afterSwitchToWindow(String arg0, WebDriver driver) {
 		// TODO Auto-generated method stub
 		
 	}
@@ -139,17 +140,17 @@ public class WebEventListener extends TestBase implements WebDriverEventListener
 		
 	}
 
-	public void beforeGetText(WebElement arg0, WebDriver arg1) {
+	public void beforeGetText(WebElement arg0, WebDriver driver) {
 		// TODO Auto-generated method stub
 		
 	}
 
-	public void beforeScript(String arg0, WebDriver arg1) {
+	public void beforeScript(String arg0, WebDriver driver) {
 		// TODO Auto-generated method stub
 		
 	}
 
-	public void beforeSwitchToWindow(String arg0, WebDriver arg1) {
+	public void beforeSwitchToWindow(String arg0, WebDriver driver) {
 		// TODO Auto-generated method stub
 		
 	}
@@ -159,7 +160,7 @@ public class WebEventListener extends TestBase implements WebDriverEventListener
 		
 	}
 
-	public void afterGetText(WebElement arg0, WebDriver arg1, String arg2) {
+	public void afterGetText(WebElement arg0, WebDriver driver, String arg2) {
 		// TODO Auto-generated method stub
 		
 	}

@@ -72,9 +72,8 @@ public class TestBase extends ExtentReportsFile {
 		driver.manage().timeouts().implicitlyWait(TestUtil.IMPLICIT_WAIT, TimeUnit.SECONDS);
 		
 		driver.get(prop.getProperty("url"));
+		
 	}
-
-
 	
 }
 

@@ -50,7 +50,7 @@ public class HomePageTest extends TestBase {
 		test1.pass("Home page title is verified");
 	}
 	
-	@Test(priority = 2)
+	//@Test(priority = 2)
 	public void verifyCorrectUserNameLabelTest()
 	{
 		testUtil.switchToFrame();
@@ -58,7 +58,7 @@ public class HomePageTest extends TestBase {
 		Assert.assertTrue(status);
 	}
 	
-	@Test(priority = 3)
+	//@Test(priority = 3)
 	public void verifyContactsLinkTest()
 	{
 		testUtil.switchToFrame();

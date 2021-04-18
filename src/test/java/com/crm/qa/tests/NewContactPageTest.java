@@ -58,7 +58,7 @@ public class NewContactPageTest extends TestBase {
 	{
 		newContactPage.createNewContact(title, firstName, lastName, company);
 	}
-	
+
 	@Test(priority = 2)
 	public void validateCreateNewContractTest()
 	{
