@@ -1,17 +1,19 @@
 package com.crm.qa.tests;
 
+import java.io.IOException;
+
 import org.testng.Assert;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.Status;
 import com.crm.qa.base.TestBase;
 import com.crm.qa.pages.ContactsPage;
 import com.crm.qa.pages.HomePage;
 import com.crm.qa.pages.LoginPage;
 import com.crm.qa.util.TestUtil;
+import com.relevantcodes.extentreports.LogStatus;
 
 public class HomePageTest extends TestBase {
 	
@@ -42,32 +44,64 @@ public class HomePageTest extends TestBase {
 	@Test(priority = 1)
 	public void verifyHomePageTitleTest()
 	{
-		ExtentTest test1 = extent.createTest("verifyHomePageTitleTest","This test is used to verify title of home page");
+		extentTest = extent.startTest("verifyHomePageTitleTest");
 		
-		test1.log(Status.INFO, "Verifying home page title");
+		extentTest.log(LogStatus.INFO, "Verifying home page title");
 		String title = homePage.validateHomePageTitle();
+		
 		Assert.assertEquals(title, "CRMPRO", "Home page title doesn't match");
-		test1.pass("Home page title is verified");
+		extentTest.log(LogStatus.PASS,"Home page title is verified");
 	}
 	
-	//@Test(priority = 2)
+	@Test(priority = 2)
 	public void verifyCorrectUserNameLabelTest()
 	{
+		extentTest = extent.startTest("verifyCorrectUserNameLabelTest");
+
+		extentTest.log(LogStatus.INFO, "Switching to the frame");
 		testUtil.switchToFrame();
+		
+		extentTest.log(LogStatus.INFO, "Verifying that username is being displayed");
 		boolean status = homePage.verifyCorrectUsername();
+		
 		Assert.assertTrue(status);
+		extentTest.log(LogStatus.PASS,"Username is displayed");
 	}
 	
-	//@Test(priority = 3)
+	@Test(priority = 3)
 	public void verifyContactsLinkTest()
 	{
+		extentTest = extent.startTest("verifyContactsLinkTest");
+		
+		extentTest.log(LogStatus.INFO, "Switching to the frame");
 		testUtil.switchToFrame();
-		contactPage = homePage.clickOnContactsLink();	
+		
+		extentTest.log(LogStatus.INFO, "Clicking on Contact Link");
+		contactPage = homePage.clickOnContactsLink();
+		
+		extentTest.log(LogStatus.PASS,"Clicked on Contacts Link");
 	}
 	
 	@AfterMethod
-	public void tearDown()
+	public void tearDown(ITestResult result) throws IOException
 	{
+		if(result.getStatus()==ITestResult.FAILURE){
+			extentTest.log(LogStatus.FAIL, "TEST CASE FAILED IS "+result.getName()); //to add name in extent report
+			extentTest.log(LogStatus.FAIL, "TEST CASE FAILED IS "+result.getThrowable()); //to add error/exception in extent report
+			
+			String screenshotPath = testUtil.getScreenshot(result.getName());
+			extentTest.log(LogStatus.FAIL, extentTest.addScreenCapture(screenshotPath)); //to add screenshot in extent report
+		}
+		else if(result.getStatus()==ITestResult.SKIP){
+			extentTest.log(LogStatus.SKIP, "Test Case SKIPPED IS " + result.getName());
+		}
+		else if(result.getStatus()==ITestResult.SUCCESS){
+			extentTest.log(LogStatus.PASS, "Test Case PASSED IS " + result.getName());
+
+		}
+		
+		extent.endTest(extentTest); //ending test 
+		
 		driver.quit();
 	}
 

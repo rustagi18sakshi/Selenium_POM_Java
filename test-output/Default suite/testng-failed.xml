@@ -3,18 +3,21 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test verbose="2" name="Default test">
     <classes>
-      <class name="com.crm.qa.tests.NewContactPageTest"/>
+      <class name="com.crm.qa.tests.HomePageTest"/>
     </classes>
   </test> <!-- Default test -->
   <test name="Default test(failed)">
     <classes>
-      <class name="com.crm.qa.tests.NewContactPageTest">
+      <class name="com.crm.qa.tests.HomePageTest">
         <methods>
           <include name="reportSetup"/>
           <include name="reportTeardown"/>
-          <include name="validateCreateMultipleNewContractTestLimitedValues"/>
+          <include name="verifyContactsLinkTest"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="verifyHomePageTitleTest"/>
         </methods>
-      </class> <!-- com.crm.qa.tests.NewContactPageTest -->
+      </class> <!-- com.crm.qa.tests.HomePageTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

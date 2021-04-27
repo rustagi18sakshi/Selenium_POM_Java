@@ -3,29 +3,29 @@ package com.qa.ExtentReportListener;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 
-import com.aventstack.extentreports.ExtentReports;
-import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+import com.relevantcodes.extentreports.ExtentReports;
+import com.relevantcodes.extentreports.ExtentTest;
+
 
 public class ExtentReportsFile {
 
-	public static ExtentHtmlReporter htmlReporter;
 	public static ExtentReports extent;
+	public static ExtentTest extentTest;
 	
 	@BeforeSuite
 	public void reportSetup() 
 	{
-		// start reporters
-        htmlReporter = new ExtentHtmlReporter("extent.html");
-    
-        // create ExtentReports and attach reporter(s)
-        extent = new ExtentReports();
-        extent.attachReporter(htmlReporter);
+        // create ExtentReports. True here signifies for override of the file.
+        extent = new ExtentReports(System.getProperty("user.dir")+"/test-output/ExtentReport.html", true);
+        extent.addSystemInfo("Host Name", "Sakshi");
+		extent.addSystemInfo("User Name", "Sakshi Automation Labs");
 	}
 	
 	@AfterSuite
 	public void reportTeardown() 
 	{
-		// calling flush writes everything to the log file
+		// calling flush writes everything to the log file.
 		extent.flush();
+		extent.close();
 	}
 }

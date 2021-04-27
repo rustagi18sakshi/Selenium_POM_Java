@@ -18,12 +18,12 @@
 	    <version>7.3.0</version>
 	</dependency>
 	
-	<!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
-	<dependency>
-	    <groupId>com.aventstack</groupId>
-	    <artifactId>extentreports</artifactId>
-	    <version>3.1.5</version>
-	</dependency>
+		<!-- https://mvnrepository.com/artifact/com.relevantcodes/extentreports -->
+		<dependency>
+			<groupId>com.relevantcodes</groupId>
+			<artifactId>extentreports</artifactId>
+			<version>2.41.2</version>
+		</dependency>
 	
 		<!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
 	<dependency>
