@@ -86,7 +86,7 @@ public class HomePageTest extends TestBase {
 	public void tearDown(ITestResult result) throws IOException
 	{
 		if(result.getStatus()==ITestResult.FAILURE){
-			extentTest.log(LogStatus.FAIL, "TEST CASE FAILED IS "+result.getName()); //to add name in extent report
+			extentTest.log(LogStatus.FAIL, "TEST CASE FAILED IS "+result.getName()); //to add test case name in extent report
 			extentTest.log(LogStatus.FAIL, "TEST CASE FAILED IS "+result.getThrowable()); //to add error/exception in extent report
 			
 			String screenshotPath = testUtil.getScreenshot(result.getName());
